@@ -7,9 +7,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyOwnCustomMaterialModule } from './material.module';
 
+// Question
+import { QuestionDetailComponent } from './question/question-detail.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuestionDetailComponent
   ],
   imports: [
     BrowserModule,
