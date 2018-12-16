@@ -10,19 +10,25 @@ import { MyOwnCustomMaterialModule } from './material.module';
 // Question
 import { QuestionDetailComponent } from './question/question-detail.component';
 
+// Answer
+import { AnswerFormComponent } from './answer/answer-form.component';
+import { FormsModule }   from '@angular/forms';
+
 // Angular Moment
 import { MomentModule } from 'angular2-moment'
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionDetailComponent
+    QuestionDetailComponent,
+    AnswerFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
-    MomentModule
+    MomentModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
