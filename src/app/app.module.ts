@@ -3,12 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+// Material Angular
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyOwnCustomMaterialModule } from './material.module';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MyOwnCustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
