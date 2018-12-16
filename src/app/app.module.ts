@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyOwnCustomMaterialModule } from './material.module';
 
+// Angular Moment
+import { MomentModule } from 'angular2-moment'
+
 // Question
 import { QuestionDetailComponent } from './question/question-detail.component';
 
@@ -14,14 +17,15 @@ import { QuestionDetailComponent } from './question/question-detail.component';
 import { AnswerFormComponent } from './answer/answer-form.component';
 import { FormsModule }   from '@angular/forms';
 
-// Angular Moment
-import { MomentModule } from 'angular2-moment'
+// Auth
+import { SigninScreenComponent } from './auth/signin-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionDetailComponent,
-    AnswerFormComponent
+    AnswerFormComponent,
+    SigninScreenComponent
   ],
   imports: [
     BrowserModule,
