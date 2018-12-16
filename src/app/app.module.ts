@@ -10,6 +10,9 @@ import { MyOwnCustomMaterialModule } from './material.module';
 // Question
 import { QuestionDetailComponent } from './question/question-detail.component';
 
+// Angular Moment
+import { MomentModule } from 'angular2-moment'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,8 @@ import { QuestionDetailComponent } from './question/question-detail.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MyOwnCustomMaterialModule
+    MyOwnCustomMaterialModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

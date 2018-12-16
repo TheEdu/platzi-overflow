@@ -1,12 +1,18 @@
-<h2>
-  <i class="{{ question.icon }}"></i>
-  {{ question.title }}
-</h2>
-
-<p>
-  {{ question.description }}
-</p>
-
-<p>
-  {{ question.createdAt }}
-</p>
+<mat-card class="question-card">
+  <mat-card-header>
+    <div mat-card-avatar class="">
+      <i mat-list-icon class="{{ question.icon }} icon"></i>
+    </div>
+    <mat-card-title>{{ question.title }}</mat-card-title>
+    <mat-card-subtitle>Eduardo Denis - {{ question.createdAt | amLocale:'es' | amTimeAgo}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ question.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
