@@ -15,7 +15,7 @@ import { QuestionDetailComponent } from './question/question-detail.component';
 
 // Answer
 import { AnswerFormComponent } from './answer/answer-form.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule}   from '@angular/forms';
 
 // Auth
 import { SigninScreenComponent } from './auth/signin-screen.component';
@@ -32,7 +32,8 @@ import { SigninScreenComponent } from './auth/signin-screen.component';
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
     MomentModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

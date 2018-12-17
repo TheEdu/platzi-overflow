@@ -18,7 +18,7 @@ export class AnswerFormComponent {
             form.value.description,
             this.question,
             new Date(),
-            new User('Eduardo', 'Denis')
+            new User(null, null, 'Eduardo', 'Denis')
         );
         this.question.answers.unshift(answer)
         form.reset() //  Borrar los inputs del formulario

@@ -1,1 +1,18 @@
-Bienvenido a Platzi Overflow!!!
+<form [formGroup]="signinForm" (ngSubmit)="onSubmit()" >
+    <mat-input-container>
+        <input 
+            matInput 
+            placeholder="Corre electrónico" 
+            formControlName="email"
+            id="email">
+    </mat-input-container>
+    <mat-input-container>
+        <input 
+            matInput
+            type="password"
+            placeholder="Contraseña" 
+            formControlName="password"
+            id="password">
+    </mat-input-container>
+    <button type="submit" mat-raised-button color="accent">Iniciar Sesión</button>
+</form>
