@@ -19,13 +19,15 @@ import { FormsModule, ReactiveFormsModule}   from '@angular/forms';
 
 // Auth
 import { SigninScreenComponent } from './auth/signin-screen.component';
+import { SignupScreenComponent } from './auth/signup-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionDetailComponent,
     AnswerFormComponent,
-    SigninScreenComponent
+    SigninScreenComponent,
+    SignupScreenComponent
   ],
   imports: [
     BrowserModule,
