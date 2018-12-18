@@ -32,7 +32,7 @@ export class SignupScreenComponent implements OnInit {
                 const user = new User(email, password, fisrtName, lastName)
                 console.log( user )
                 form.resetForm()
-                this.signupForm.reset()
+                // this.signupForm.reset()
             } else {
                 console.log("La contraseña y su confirmación deben coincidir")
             }
