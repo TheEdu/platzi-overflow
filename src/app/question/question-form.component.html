@@ -1,11 +1,22 @@
-<form [formGroup]="questionForm" (ngSubmit)="onSubmit()" >
-    <!-- <mat-input-container>
-        <input 
-            matInput 
-            placeholder="Corre electrónico" 
-            formControlName="email"
-            id="email">
-    </mat-input-container> -->
+<form [formGroup]="questionForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <mat-input-container>
+        <input
+            matInput
+            placeholder="Título"
+            formControlName="title"
+            type="text"
+            id="title"
+            required>
+    </mat-input-container>
+    <mat-input-container>
+            <input 
+                matInput 
+                placeholder="Descripción" 
+                formControlName="description"
+                type="text"
+                id="description"
+                required>
+        </mat-input-container>
     <div class="example-button-row">
         <button type="submit" mat-raised-button color="accent">Nueva Pregunta</button>
     </div>
