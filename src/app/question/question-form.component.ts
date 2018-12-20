@@ -31,14 +31,15 @@ export class QuestionFormComponent implements OnInit {
     ngOnInit () {
         this.questionForm = new FormGroup({
             title: new FormControl(null, Validators.required),
-            description: new FormControl(null, Validators.required)
+            description: new FormControl(null, Validators.required),
+            icon: new FormControl(null, Validators.required)
         })
     };
 
     onSubmit (form: NgForm) {
         if(this.questionForm.valid) {
-            const { title, description } = this.questionForm.value
-            const question = new Question(title, description, new Date(), "icon")
+            const { title, description, icon } = this.questionForm.value
+            const question = new Question(title, description, new Date(), icon)
             console.log(question)
             form.resetForm()
         }
