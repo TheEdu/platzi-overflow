@@ -9,14 +9,23 @@
             required>
     </mat-input-container>
     <mat-input-container>
-            <input 
-                matInput 
-                placeholder="Descripción" 
-                formControlName="description"
-                type="text"
-                id="description"
-                required>
-        </mat-input-container>
+        <input 
+            matInput 
+            placeholder="Descripción" 
+            formControlName="description"
+            type="text"
+            id="description"
+            required>
+    </mat-input-container>
+    <mat-grid-list cols="3" rowHeight="3:2">
+        <mat-grid-tile>
+            <i mat-list-icon class="material-icons">help</i>
+            <small> Sin Icono </small>
+        </mat-grid-tile>
+        <mat-grid-tile *ngFor="let icon of icons">
+            <i mat-list-icon class="devicon-{{ icon.name }}-{{ getIconVersion(icon) }} colored"></i>
+        </mat-grid-tile>
+    </mat-grid-list>
     <div class="example-button-row">
         <button type="submit" mat-raised-button color="accent">Nueva Pregunta</button>
     </div>

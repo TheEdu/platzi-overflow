@@ -5,7 +5,9 @@ import {
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatRadioModule
 } from '@angular/material';
 
 
@@ -15,7 +17,9 @@ const modules = [
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatRadioModule
 ]
 
 @NgModule({
