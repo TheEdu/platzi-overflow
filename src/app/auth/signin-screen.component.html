@@ -16,5 +16,9 @@
     </mat-input-container>
     <div class="example-button-row">
         <button type="submit" mat-raised-button color="accent">Iniciar Sesión</button>
+        <p class="p-center">
+            ¿Eres Nuevo?
+            <a mat-button color="primary" [routerLink]="['/signup']">Registrate!</a>
+        </p>
     </div>
 </form>
