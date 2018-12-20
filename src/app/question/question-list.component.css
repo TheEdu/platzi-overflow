@@ -8,3 +8,14 @@ i.help {
     padding: 0 !important;
     font-size: 48px !important;
 }
+
+.add-question {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+}
+
+.question-list {
+    padding-right: 50px;
+}
