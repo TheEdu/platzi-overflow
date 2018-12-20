@@ -23,6 +23,9 @@ import { FormsModule, ReactiveFormsModule}   from '@angular/forms';
 import { SigninScreenComponent } from './auth/signin-screen.component';
 import { SignupScreenComponent } from './auth/signup-screen.component';
 
+// Routing
+import { Routing } from './app.routing';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,8 @@ import { SignupScreenComponent } from './auth/signup-screen.component';
     MyOwnCustomMaterialModule,
     MomentModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Routing
   ],
   providers: [],
   bootstrap: [AppComponent]
