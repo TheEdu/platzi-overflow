@@ -6,7 +6,7 @@ const q = new Question(
     'Quisiera reutilizar un componente de material angular',
     new Date,
     'devicon-android-plain'
-)
+);
 
 @Component({
     selector: 'app-question-list',
@@ -15,5 +15,5 @@ const q = new Question(
 })
 
 export class QuestionListComponent {
-    questions: Question[] = new Array(10).fill(q)
-}
+    questions: Question[] = new Array(10).fill(q);
+};

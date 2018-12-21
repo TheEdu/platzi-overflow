@@ -20,11 +20,11 @@ const modules = [
     MatListModule,
     MatGridListModule,
     MatRadioModule
-]
+];
 
 @NgModule({
     imports: modules,
     exports: modules,
 })
 
-export class MyOwnCustomMaterialModule { }
+export class MyOwnCustomMaterialModule {}

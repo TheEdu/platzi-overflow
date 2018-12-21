@@ -13,14 +13,14 @@ import { Question } from '../question/question.model';
 export class AnswerFormComponent {
     @Input() question: Question;
 
-    onSubmit(form: NgForm){
+    onSubmit (form: NgForm) {
         const answer = new Answer(
             form.value.description,
             this.question,
             new Date(),
             new User(null, null, 'Eduardo', 'Denis')
         );
-        this.question.answers.unshift(answer)
-        form.reset() //  Borrar los inputs del formulario
+        this.question.answers.unshift(answer);
+        form.reset(); //  Borrar los inputs del formulario
     }
 }

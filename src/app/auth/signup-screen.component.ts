@@ -22,22 +22,22 @@ export class SignupScreenComponent implements OnInit {
             passwordConfirm: new FormControl(null, Validators.required),
             firstName: new FormControl(null, Validators.required),
             lastName: new FormControl(null, Validators.required)
-        })
+        });
     }
 
     onSubmit(form: NgForm) {
-        if(this.signupForm.valid) {
-            const { fisrtName, lastName, email, password, passwordConfirm } = this.signupForm.value
+        if (this.signupForm.valid) {
+            const { fisrtName, lastName, email, password, passwordConfirm } = this.signupForm.value;
             if (password === passwordConfirm) {
-                const user = new User(email, password, fisrtName, lastName)
-                console.log( user )
-                form.resetForm()
+                const user = new User(email, password, fisrtName, lastName);
+                console.log(user);
+                form.resetForm();
                 // this.signupForm.reset()
             } else {
-                console.log("La contraseña y su confirmación deben coincidir")
+                console.log('La contraseña y su confirmación deben coincidir');
             }
         } else {
-            console.log("Error de Validación")
+            console.log('Error de Validación');
         }
     }
 }

@@ -18,16 +18,16 @@ export class SigninScreenComponent implements OnInit {
                 Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
             ]),
             password: new FormControl(null, Validators.required)
-        })
+        });
     }
 
     onSubmit() {
-        if(this.signinForm.valid) {
-            const { email, password } = this.signinForm.value
-            const user = new User(email, password)
-            console.log( user )
+        if (this.signinForm.valid) {
+            const { email, password } = this.signinForm.value;
+            const user = new User(email, password);
+            console.log(user);
         } else {
-            console.log("Error de Validación")
+            console.log('Error de Validación');
         }
     }
 }

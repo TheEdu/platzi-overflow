@@ -22,7 +22,7 @@ export class QuestionFormComponent implements OnInit {
             version = icon.versions.font[0];
         }
 
-        if(icon.name=='illustrator'){
+        if (icon.name === 'illustrator') {
             version = icon.versions.svg[0];
         }
         return version;
@@ -33,15 +33,15 @@ export class QuestionFormComponent implements OnInit {
             title: new FormControl(null, Validators.required),
             description: new FormControl(null, Validators.required),
             icon: new FormControl(null, Validators.required)
-        })
-    };
+        });
+    }
 
     onSubmit (form: NgForm) {
-        if(this.questionForm.valid) {
-            const { title, description, icon } = this.questionForm.value
-            const question = new Question(title, description, new Date(), icon)
-            console.log(question)
-            form.resetForm()
+        if (this.questionForm.valid) {
+            const { title, description, icon } = this.questionForm.value;
+            const question = new Question(title, description, new Date(), icon);
+            console.log(question);
+            form.resetForm();
         }
-    };
+    }
 }

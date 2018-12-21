@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyOwnCustomMaterialModule } from './material.module';
 
 // Angular Moment
-import { MomentModule } from 'angular2-moment'
+import { MomentModule } from 'angular2-moment';
 
 // Question
 import { QuestionDetailComponent } from './question/question-detail.component';
@@ -17,7 +17,7 @@ import { QuestionFormComponent } from './question/question-form.component';
 
 // Answer
 import { AnswerFormComponent } from './answer/answer-form.component';
-import { FormsModule, ReactiveFormsModule}   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // Auth
 import { SigninScreenComponent } from './auth/signin-screen.component';
