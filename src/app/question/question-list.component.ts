@@ -16,4 +16,4 @@ const q = new Question(
 
 export class QuestionListComponent {
     questions: Question[] = new Array(10).fill(q);
-};
+}
