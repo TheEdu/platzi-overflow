@@ -19,9 +19,3 @@ i.help {
 .question-list {
     padding-right: 50px;
 }
-
-mat-spinner {
-    position: absolute;
-    top: 30%;
-    left: 30%;
-}
