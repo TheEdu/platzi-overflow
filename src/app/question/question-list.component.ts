@@ -1,19 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Question } from './question.model';
-
-const q = new Question(
-    'Como reutilizo un componente en android?',
-    'Quisiera reutilizar un componente de material angular',
-    new Date,
-    'devicon-android-plain'
-);
-
+import { QuestionService } from './question.service';
 @Component({
     selector: 'app-question-list',
     templateUrl: './question-list.component.html',
-    styleUrls: ['./question-list.component.css']
+    styleUrls: ['./question-list.component.css'],
+    providers: [QuestionService]
 })
 
-export class QuestionListComponent {
-    questions: Question[] = new Array(10).fill(q);
+export class QuestionListComponent implements OnInit {
+    questions: Question[];
+    loading: true; // Indica si estamos pidiendo los datos o no del BackEnd
+
+    constructor(private questionService: QuestionService) {}
+
+    ngOnInit() {
+        this.loading = true;
+        this.questionService
+            .getQuestions()
+            .then((questions: Question[]) => {
+                this.questions = questions;
+            });
+    }
+
 }
