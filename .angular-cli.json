@@ -57,7 +57,7 @@
     "styleExt": "css",
     "component": {},
     "serve": {
-      "host": "192.168.0.201",
+      "host": "localhost",
       "port": 4200
     }
   }
