@@ -10,7 +10,7 @@ import { QuestionService } from './question.service';
 
 export class QuestionListComponent implements OnInit {
     questions: Question[];
-    loading: true; // Indica si estamos pidiendo los datos o no del BackEnd
+    loading: Boolean =  true; // Indica si estamos pidiendo los datos o no del BackEnd
 
     constructor(private questionService: QuestionService) {}
 
@@ -20,6 +20,7 @@ export class QuestionListComponent implements OnInit {
             .getQuestions()
             .then((questions: Question[]) => {
                 this.questions = questions;
+                this.loading = false;
             });
     }
 
