@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Question } from './question.model';
 import { QuestionService } from './question.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-question-detail',
@@ -17,7 +17,8 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
 
     constructor(
         private questionService: QuestionService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private router: Router
     ) {}
 
     ngOnInit() {
@@ -25,8 +26,13 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
             this.questionService
             .getQuestion(params.id)
             .then((question: Question) => {
-                this.question = question;
-                this.loading = false;
+                if (question === undefined) {
+                    console.log('question undefined');
+                    this.router.navigate(['/questions']);
+                } else {
+                    this.question = question;
+                    this.loading = false;
+                }
             });
         });
     }
