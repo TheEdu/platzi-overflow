@@ -4,6 +4,7 @@ import { Question } from './question.model';
 import icons from './icons';
 import { QuestionService } from './question.service';
 import { Router } from '@angular/router';
+import { AuthService } from './../auth/auth.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class QuestionFormComponent implements OnInit {
 
     constructor(
         private questionService: QuestionService,
-        private router: Router
+        private router: Router,
+        private authService: AuthService
     ) {}
 
     getIconVersion (icon: any) {
@@ -42,6 +44,11 @@ export class QuestionFormComponent implements OnInit {
             description: new FormControl(null, Validators.required),
             icon: new FormControl(null, Validators.required)
         });
+
+        if (!this.authService.isLoggedIn()) {
+            return this.router.navigateByUrl('/signin');
+        }
+
     }
 
     onSubmit (form: NgForm) {
@@ -56,7 +63,7 @@ export class QuestionFormComponent implements OnInit {
                         console.log(_id);
                         this.router.navigate(['/questions', _id]);
                     },
-                    (error) => { console.log(error); }
+                    this.authService.handleError
                 );
         }
     }

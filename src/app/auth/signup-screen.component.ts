@@ -38,7 +38,7 @@ export class SignupScreenComponent implements OnInit {
                 this.authService.signup(user)
                     .subscribe(
                         () => console.log('Signup Exitoso!!!'),
-                        error => console.log(error)
+                        this.authService.handleError
                     );
             } else {
                 console.log('La contraseña y su confirmación deben coincidir');

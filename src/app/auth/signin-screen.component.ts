@@ -33,7 +33,7 @@ export class SigninScreenComponent implements OnInit {
                 .subscribe(
                     // this.authService.login,
                     () => console.log('Sigin Exitoso!!!'),
-                    error => console.log(error)
+                    this.authService.handleError
                 );
         } else {
             console.log('Error de Validación');
