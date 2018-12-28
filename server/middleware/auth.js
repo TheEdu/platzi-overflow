@@ -17,7 +17,7 @@ export const users = [
 export const findUserByEmail = e => users.find(({ email }) => email === e)
 
 export const required = (req, res, next) => {
-    jwt.verify(req.body.token, secret, (err, token) => {
+    jwt.verify(req.query.token, secret, (err, token) => {
 
         if (err) {
             debug('JWT no se encripto con nuestro secreto')
