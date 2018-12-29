@@ -5,6 +5,7 @@ import {
   questionsMiddleware
 } from '../middleware'
 import { question } from '../db-api'
+import { handleError } from './../utils';
 
 const app = express.Router()
 
@@ -19,16 +20,23 @@ app.get('/', async (req, res) => {
     const questions = await question.findAll()
     res.status(200).json(questions)
   } catch (error) {
-    res.status(500).json({
-      message: 'An error occored',
-      error: error
-    })
+    handleError(error, res)
   }
 })
 
+// /api/questions/:id middleware way
+// app.get('/:id', questionMiddleware, (req, res) => {
+//   res.status(200).json(req.question)
+// })
+
 // /api/questions/:id
-app.get('/:id', questionMiddleware, (req, res) => {
-  res.status(200).json(req.question)
+app.get('/:id', async (req, res) => {
+  try {
+    const q = await question.findById(req.params.id)
+    res.status(200).json(q)
+  } catch (error) {
+    handleError(error, res)
+  }
 })
 
 // POST /api/questions
