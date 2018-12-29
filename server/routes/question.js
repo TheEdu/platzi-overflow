@@ -4,12 +4,26 @@ import {
   questionMiddleware,
   questionsMiddleware
 } from '../middleware'
+import { question } from '../db-api'
 
 const app = express.Router()
 
-// /api/questions
-app.get('/', questionsMiddleware, (req, res) => {
-  res.status(200).json(req.questions)
+// /api/questions middleware way
+// app.get('/', questionsMiddleware, (req, res) => {
+//   res.status(200).json(req.questions)
+// })
+
+// /api/questions db-api
+app.get('/', async (req, res) => {
+  try {
+    const questions = await question.findAll()
+    res.status(200).json(questions)
+  } catch (error) {
+    res.status(500).json({
+      message: 'An error occored',
+      error: error
+    })
+  }
 })
 
 // /api/questions/:id
