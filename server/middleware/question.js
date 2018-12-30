@@ -1,3 +1,6 @@
+import { handleError } from './../utils'
+import { question as  questionDB } from '../db-api'
+
 const question = {
     _id: 1,
     title: '¿Cómo reutilizo un componente en Android?',
@@ -25,3 +28,12 @@ export const questionMiddleware = (req, res, next) => {
     req.question = questions.find(({ _id }) => _id === +id)
     next()
 }
+
+export const questionMiddleware2 = async (req, res, next) => {
+    try {
+      req.question = await questionDB.findById(req.params.id)
+      next()
+    } catch (err) {
+      handleError(err, res)
+    }
+  }
