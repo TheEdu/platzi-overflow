@@ -2,7 +2,6 @@ import express from 'express'
 import Debug from 'debug'
 import jwt from 'jsonwebtoken'
 import { secret } from '../config'
-import { findUserByEmail, users } from './../middleware';
 import { User } from '../models'
 import { handleError } from './../utils';
 import { 
@@ -15,13 +14,8 @@ const debug = new Debug('platzi-overflow:auth')
 
 const createToken = (user) => jwt.sign({ user }, secret, { expiresIn: 86400 })
 
-// function comparePasswords(providedPassword, userPassword) {
-//   return providedPassword === userPassword
-// }
-
 app.post('/signin', async (req, res, next) => {
   const { email, password } = req.body
-  // const user = findUserByEmail(email)
   const user = await User.findOne({ email })
 
   if (!user) {

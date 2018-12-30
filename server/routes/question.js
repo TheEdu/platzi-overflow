@@ -1,9 +1,7 @@
 import express from 'express'
 import {
   required,
-  questionMiddleware,
-  questionsMiddleware,
-  questionMiddleware2
+  questionMiddleware
 } from '../middleware'
 import { question } from '../db-api'
 import { handleError } from './../utils'
@@ -13,11 +11,6 @@ import Debug from 'debug'
 const debug = new Debug('platzi-overflow:routes:question')
 
 const app = express.Router()
-
-// /api/questions middleware way
-// app.get('/', questionsMiddleware, (req, res) => {
-//   res.status(200).json(req.questions)
-// })
 
 // /api/questions db-api
 app.get('/', async (req, res) => {
@@ -29,13 +22,8 @@ app.get('/', async (req, res) => {
   }
 })
 
-// /api/questions/:id middleware way
-// app.get('/:id', questionMiddleware, (req, res) => {
-//   res.status(200).json(req.question)
-// })
-
 // /api/questions/:id
-app.get('/:id', questionMiddleware2, async (req, res) => {
+app.get('/:id', questionMiddleware, async (req, res) => {
   try {
     // const q = await question.findById(req.params.id)
     // res.status(200).json(q)
@@ -44,17 +32,6 @@ app.get('/:id', questionMiddleware2, async (req, res) => {
     handleError(error, res)
   }
 })
-
-// POST /api/questions middleware way
-// app.post('/', required, questionsMiddleware,(req, res) => {
-//   const question = req.body
-//   question._id = +new Date()
-//   question.user = req.user
-//   question.createdAt = new Date()
-//   question.answers = []
-//   req.questions.push(question)
-//   res.status(201).json(question)
-// })
 
 // POST /api/questions
 app.post('/', required, async (req, res) => {
@@ -73,17 +50,8 @@ app.post('/', required, async (req, res) => {
   }
 })
 
-// POST /api/questions/id/answers middleware way
-// app.post('/:id/answers', required, questionMiddleware, (req, res) => {
-//   const answer = req.body
-//   const q = req.question
-//   answer.createdAt = new Date()
-//   answer.user = req.user
-//   q.answers.push(answer)
-//   res.status(201).json(answer)
-// })
-
-app.post('/:id/answers', required, questionMiddleware2, async (req, res) => {
+// POST /api/questions/id/answers
+app.post('/:id/answers', required, questionMiddleware, async (req, res) => {
   const a = req.body
   const q = req.question
   a.createdAt = new Date()
