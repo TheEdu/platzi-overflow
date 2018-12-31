@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:server": "cross-env NODE_ENV=development cross-env DEBUG=platzi-overflow* nodemon ./server/index.js --exec babel-node ",
-    "start:client": "ng serve"
+    "start:client": "ng serve",
+    "build:client": "ng build --environment=prod"
   },
   "private": true,
   "dependencies": {
@@ -44,11 +45,12 @@
     "rxjs": "^5.4.2",
     "sweet-scroll": "^3.0.1",
     "url-join": "^4.0.0",
-    "zone.js": "^0.8.14"
-  },
-  "devDependencies": {
+    "zone.js": "^0.8.14",
     "@angular/cli": "1.4.10",
     "@angular/compiler-cli": "^4.2.4",
+    "typescript": "~2.3.3"
+  },
+  "devDependencies": {
     "@angular/language-service": "^4.2.4",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
@@ -65,7 +67,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
-    "tslint": "~5.7.0",
-    "typescript": "~2.3.3"
+    "tslint": "~5.7.0"
   }
 }
