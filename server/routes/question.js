@@ -15,7 +15,8 @@ const app = express.Router()
 // /api/questions db-api
 app.get('/', async (req, res) => {
   try {
-    const questions = await question.findAll()
+    const sort = req.query.sort
+    const questions = await question.findAll(sort)
     res.status(200).json(questions)
   } catch (error) {
     handleError(error, res)
